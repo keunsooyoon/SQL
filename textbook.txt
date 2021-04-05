@@ -1,0 +1,23 @@
+SELECT *
+FROM employees;
+-- *은 모든 열 모든 데이터를 조회
+-- 명령어는 대문자 나머지는 소문자로 작성 권장
+
+
+
+
+SELECT employee_id, first_name, last_name
+FROM employees;
+-- select 뒤의 열들만 조회
+-- 명령어는 대문자 나머지는 소문자로 작성 권장
+
+
+
+
+
+
+
+
+
+
+
