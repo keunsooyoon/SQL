@@ -189,6 +189,82 @@ FROM dual;
 
 
 
+SELECT salary,
+        salary/30 일급,
+        ROUND(salary/30,0) 적용결과0,
+        ROUND(salary/30,1) 적용결과1,
+        ROUND(salary/30, -1) 적용결과MINUS1
+FROM employees;
+-- 반올림할 자리값이 0이면 소수 첫째 자리에서 반올림
+-- 반올림할 자리값이 -1이면 정수 첫째자리에서 반올림 
+
+
+
+
+SELECT TO_CHAR(SYSDATE, 'YY/MM/DD/HH24:MI') 오늘날짜,
+    SYSDATE + 1 더하기1,
+    SYSDATE + 1 빼기1,
+    TO_DATE('20171202')-TO_DATE('20171201') 날짜빼기,
+    SYSDATE + 13/24 시간더하기
+    
+FROM DUAL;
+
+
+
+SELECT SYSDATE, hire_date, MONTHS_BETWEEN(SYSDATE,hire_date) 적용결과
+FROM employees
+WHERE department_id = 100;
+-- 날짜 사이의 개월수 구하기 
+
+
+
+
+SELECT hire_date,
+        ROUND(hire_date,'MONTH') 적용결과M,
+        ROUND(hire_date,'YEAR') 적용결과Y,
+        TRUNC(hire_date,'MONTH') 적용결과M,
+        TRUNC(hire_date,'YEAR') 적용결과Y
+FROM employees
+WHERE employee_id BETWEEN 100 AND 106;
+-- 년 월 일  
+
+
+
+
+
+SELECT employee_id, first_name, last_name, salary,
+    CASE
+        WHEN salary >= 9000 THEN '상위급여'
+        WHEN salary BETWEEN 6000 AND 8999 THEN '중귀급여'
+        ELSE '하위급여'
+    END AS 급여등급
+FROM employees
+WHERE job_id = 'IT_PROG'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
